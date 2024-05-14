@@ -34,9 +34,17 @@ li{
 button{
     cursor: pointer;
     border: 1px solid #000000;
-    background-color: rgb(250, 179, 179);
-    color: white;
+    background-color: rgb(255, 194, 115);
+    color: rgb(0, 0, 0);
     padding: 5px;
     margin: 5px;
+
+    border-radius: 2px;
+}
+
+button:hover{
+    background-color: rgb(247, 170, 29);
+    color: white;
+    transition: all 0.3s;
 }
 
