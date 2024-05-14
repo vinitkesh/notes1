@@ -21,7 +21,10 @@ input{
     height: fit-content;
     margin: 0 0px;
     padding: 5px;
-    border: 1px solid #000000;
+    border: 1px solid whitesmoke;
+    background-color: #1a1919;
+    color: white;
+    
 }
 
 

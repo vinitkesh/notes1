@@ -49,24 +49,26 @@ function App() {
   };
 
   const handleDelete = async (id) => {
-    try {
-        // Implement your delete logic here, for example:
-        await axios.delete(`http://localhost:5000/api/notes/${id}`);
-        setNotes(prevNotes => prevNotes.filter(note => note.id !== id));
-    } catch (error) {
-        console.error('Error deleting note:', error);
-    }
-};
+      try {
+          // Implement your delete logic here, for example:
+          await axios.delete(`http://localhost:5000/api/notes/${id}`);
+          setNotes(prevNotes => prevNotes.filter(note => note.id !== id));
+      } catch (error) {
+          console.error('Error deleting note:', error);
+      }
+    };
 
     return (
         <div>
             <h1>Notes</h1>
-            <input  
-                type="text"   
-                value={newNote}   
-                onChange={(e) => setNewNote(e.target.value)} 
+            <textarea
+                Styles={"resize: none; overflow: hidden;"}
+                value={newNote}
+                onKeyDown={(e) => {if(e=='Enter') console.log('Enter pressed')}}
+                onChange={(e) => setNewNote(e.target.value)}
                 placeholder="Enter your text here..."
             />
+
             <button onClick={addNote}>Add Note</button>
             <Note notes={notes} onDelete={handleDelete} />
             
