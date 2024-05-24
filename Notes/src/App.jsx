@@ -11,10 +11,12 @@ function App() {
         fetchNotes();
     }, []);
 
+    const URL = 'https://notes1api.azurewebsites.net/';
+
     // Fetch notes from the server
     const fetchNotes = async () => {
       try {
-          const response = await axios.get('http://localhost:5000/api/notes');
+          const response = await axios.get('${URL}/api/notes');
           // Convert response.data object into an array
           const notesArray = Object.keys(response.data).map(key => ({
               id: key,
@@ -36,7 +38,7 @@ function App() {
               return;
           }
   
-          const response = await axios.post('http://localhost:5000/api/notes', {
+          const response = await axios.post('${URL}/api/notes', {
               data: newNote
           });
   
@@ -51,7 +53,7 @@ function App() {
   const handleDelete = async (id) => {
       try {
           // Implement your delete logic here, for example:
-          await axios.delete(`http://localhost:5000/api/notes/${id}`);
+          await axios.delete(`${URL}/api/notes/${id}`);
           setNotes(prevNotes => prevNotes.filter(note => note.id !== id));
       } catch (error) {
           console.error('Error deleting note:', error);
@@ -77,3 +79,4 @@ function App() {
 }
 
 export default App;
+  
