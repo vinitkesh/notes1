@@ -20,14 +20,14 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          cd Backend/
+          cd Backend
           npm install
-          npm run build --if-present
+          npm run build 
           npm run test --if-present || echo "No tests specified"
 
       - name: Zip artifact for deployment
         run: |
-          cd Backend/
+          cd Backend
           zip -r ../release.zip .
 
       - name: Upload artifact for deployment job

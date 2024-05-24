@@ -6,10 +6,7 @@ const Note = ({ notes, onDelete }) => {
 
     const handleDeleteClick = (id) => {
         // Show a browser alert for confirmation
-        const isConfirmed = window.confirm('Are you sure you want to delete this note?');
-        if (isConfirmed) {
-            onDelete(id);
-        }
+        onDelete(id);
     };
 
     const handleConfirmDelete = () => {

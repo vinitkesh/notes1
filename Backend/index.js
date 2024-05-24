@@ -15,7 +15,7 @@ const firebaseUrl = 'https://testserver-5b324-default-rtdb.asia-southeast1.fireb
 // API Endpoint to fetch notes from Firebase
 app.get('/api/notes', async (req, res) => {
     try {
-        const response = await axios.get(`${firebaseUrl}/notes.json`);
+        const response = await axios.get(`${firebaseUrl}/notes.json`);  
         res.send(response.data);
     } catch (error) {
         res.status(500).send({ error: 'Error fetching notes' });
