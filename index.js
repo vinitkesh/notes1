@@ -4,7 +4,7 @@ const cors = require('cors');
 const axios = require('axios');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = parseInt(process.env.PORT, 10) || 80;
 
 app.use(bodyParser.json()); // Parse JSON from the request body
 app.use(cors()); // Enable CORS

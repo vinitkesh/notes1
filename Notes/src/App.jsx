@@ -3,7 +3,6 @@ import axios from 'axios';
 import Note from './Note';
 import Styles from './App.module.css';
 
-
 function App() {
     const [notes, setNotes] = useState([]);
     const [newNote, setNewNote] = useState('');
